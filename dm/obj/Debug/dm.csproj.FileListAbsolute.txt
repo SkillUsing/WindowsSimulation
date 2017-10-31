@@ -1,0 +1,12 @@
+E:\Project_Dm\dm\dm\bin\Debug\dm.exe.config
+E:\Project_Dm\dm\dm\bin\Debug\dm.exe
+E:\Project_Dm\dm\dm\bin\Debug\dm.pdb
+E:\Project_Dm\dm\dm\bin\Debug\XGDm.dll
+E:\Project_Dm\dm\dm\bin\Debug\XGDm.xml
+E:\Project_Dm\dm\dm\obj\Debug\dm.Form1.resources
+E:\Project_Dm\dm\dm\obj\Debug\dm.Properties.Resources.resources
+E:\Project_Dm\dm\dm\obj\Debug\dm.csproj.GenerateResource.Cache
+E:\Project_Dm\dm\dm\obj\Debug\dm.csproj.CoreCompileInputs.cache
+E:\Project_Dm\dm\dm\obj\Debug\dm.exe
+E:\Project_Dm\dm\dm\obj\Debug\dm.pdb
+E:\Project_Dm\dm\dm\obj\Debug\dm.csprojResolveAssemblyReference.cache
