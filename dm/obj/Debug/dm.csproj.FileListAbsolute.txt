@@ -10,3 +10,14 @@ E:\Project_Dm\dm\dm\obj\Debug\dm.csproj.CoreCompileInputs.cache
 E:\Project_Dm\dm\dm\obj\Debug\dm.exe
 E:\Project_Dm\dm\dm\obj\Debug\dm.pdb
 E:\Project_Dm\dm\dm\obj\Debug\dm.csprojResolveAssemblyReference.cache
+D:\Project\WindowsSimulation\dm\bin\Debug\dm.exe.config
+D:\Project\WindowsSimulation\dm\bin\Debug\dm.exe
+D:\Project\WindowsSimulation\dm\bin\Debug\dm.pdb
+D:\Project\WindowsSimulation\dm\bin\Debug\XGDm.dll
+D:\Project\WindowsSimulation\dm\bin\Debug\XGDm.xml
+D:\Project\WindowsSimulation\dm\obj\Debug\dm.Form1.resources
+D:\Project\WindowsSimulation\dm\obj\Debug\dm.Properties.Resources.resources
+D:\Project\WindowsSimulation\dm\obj\Debug\dm.csproj.GenerateResource.Cache
+D:\Project\WindowsSimulation\dm\obj\Debug\dm.csproj.CoreCompileInputs.cache
+D:\Project\WindowsSimulation\dm\obj\Debug\dm.exe
+D:\Project\WindowsSimulation\dm\obj\Debug\dm.pdb
