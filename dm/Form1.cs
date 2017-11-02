@@ -79,7 +79,7 @@ namespace dm
             //_dm.SetAero(0);//关闭Aero
             //_dm.EnablePicCache(0);
             //后台绑定且隐藏dll
-            var x = _dm.BindWindowEx(HwndCurrent, "gdi2", "windows", "windows", "dx.public.anti.api", 103);
+            var x = _dm.BindWindowEx(HwndCurrent, "dx2", "windows", "windows", "", 0);
             Console.WriteLine(x);
             Console.WriteLine(_dm.GetLastError());
             //GetBindPic();
@@ -125,6 +125,39 @@ namespace dm
         private void button2_Click(object sender, EventArgs e)
         {
             _dm.UnBindWindow();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            _dm.MoveTo(1073, 563);
+            _dm.delay(200);
+            _dm.LeftClick();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var isWhile = true;
+            var i = 1;
+            while (isWhile)
+            {
+                _dm.FindPic(544, 103, 619, 177, "ts-x.bmp", "000000", 0.7, 0, out int x, out int y);
+                if (x == -1 || y == -1)
+                {
+                    _dm.delay(200);
+                    Console.WriteLine($"找图{i}次!");
+                    i++;
+                    if (i > 20)
+                    {
+                        isWhile = false;
+                    }
+                    continue;
+                }
+                Console.WriteLine($"找到了{x},{y}!");
+                _dm.MoveTo(x, y);
+                _dm.delay(200);
+                _dm.LeftClick();
+                isWhile = false;
+            }
         }
     }
 }
