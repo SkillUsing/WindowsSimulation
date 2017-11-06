@@ -14,26 +14,26 @@ namespace dm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
-            var principal = new System.Security.Principal.WindowsPrincipal(identity);
-            if (principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator))
-            {
-                //如果是管理员，则直接运行
-                Application.Run(new Form1());
-            }
-            else
-            {
-                var startInfo = new ProcessStartInfo
-                {
-                    UseShellExecute = true,
-                    WorkingDirectory = Environment.CurrentDirectory,
-                    FileName = Application.ExecutablePath,
-                    Verb = "runas"
-                };
-                Process.Start(startInfo);
-                Application.Exit();
-            }
+            Application.Run(new Form1());
+            //var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
+            //var principal = new System.Security.Principal.WindowsPrincipal(identity);
+            //if (principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator))
+            //{
+            //    //如果是管理员，则直接运行
+            //    Application.Run(new Form1());
+            //}
+            //else
+            //{
+            //    var startInfo = new ProcessStartInfo
+            //    {
+            //        UseShellExecute = true,
+            //        WorkingDirectory = Environment.CurrentDirectory,
+            //        FileName = Application.ExecutablePath,
+            //        Verb = "runas"
+            //    };
+            //    Process.Start(startInfo);
+            //    Application.Exit();
+            //}
         }
     }
 }

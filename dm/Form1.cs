@@ -27,9 +27,11 @@ namespace dm
 
         private readonly XGDm _dm = new XGDm();
 
+        private readonly string _path = AppDomain.CurrentDomain.BaseDirectory;
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            var path = $"{AppDomain.CurrentDomain.BaseDirectory}dm.dll";
+            var path = $"{_path}dm.dll";
             XGDm.DllPath = path;
             _dm.Create();
             var process = Process.GetProcessesByName("dm");
@@ -39,9 +41,11 @@ namespace dm
                 var offsetByDm = IntPtr.Add(ex.BaseAddress, 0x1063D0);
                 MemoryApi.WriteMemoryValue(offsetByDm, "dm", 1);
             }
-            Console.WriteLine(_dm.Ver());
+            Console.WriteLine("大漠版本号：" + _dm.Ver());
             var x = _dm.DmGuard(1, "np");
-            Console.WriteLine(x);
+            Console.WriteLine("防护盾开启:" + x);
+            x = _dm.SetDict(0, $"{_path}yyszk.txt");
+            Console.WriteLine("字库设置:" + x);
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -76,14 +80,10 @@ namespace dm
             Cursor = Cursors.Default;
             if (HwndCurrent == IntPtr.Zero) return;
             ApiTools.DrawRectFrame(HwndCurrent);
-            //_dm.SetAero(0);//关闭Aero
-            //_dm.EnablePicCache(0);
+            _dm.SetAero(0);//关闭Aero
             //后台绑定且隐藏dll
-            var x = _dm.BindWindowEx(HwndCurrent, "dx2", "windows", "windows", "", 0);
-            Console.WriteLine(x);
-            Console.WriteLine(_dm.GetLastError());
-            //GetBindPic();
-            //timer1.Start();
+            var x = _dm.BindWindowEx(HwndCurrent, "dx2", "windows3", "windows", "", 0);
+            Console.WriteLine("后台绑定:" + x);
         }
 
         private void GetBindPic()
@@ -129,35 +129,20 @@ namespace dm
 
         private void button3_Click(object sender, EventArgs e)
         {
-            _dm.MoveTo(1073, 563);
-            _dm.delay(200);
-            _dm.LeftClick();
+            YysTools.Jjtp(_dm);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        public (int x, int y)? StringToPosition(string str)
         {
-            var isWhile = true;
-            var i = 1;
-            while (isWhile)
+            var ary = str.Split('|');
+            var x = int.Parse(ary[1]);
+            var y = int.Parse(ary[2]);
+            if (x > 0)
             {
-                _dm.FindPic(544, 103, 619, 177, "ts-x.bmp", "000000", 0.7, 0, out int x, out int y);
-                if (x == -1 || y == -1)
-                {
-                    _dm.delay(200);
-                    Console.WriteLine($"找图{i}次!");
-                    i++;
-                    if (i > 20)
-                    {
-                        isWhile = false;
-                    }
-                    continue;
-                }
-                Console.WriteLine($"找到了{x},{y}!");
-                _dm.MoveTo(x, y);
-                _dm.delay(200);
-                _dm.LeftClick();
-                isWhile = false;
+                return (x, y);
             }
+            return null;
         }
+
     }
 }
