@@ -18,7 +18,7 @@ namespace dm
         /// new Position(1136, 640);
         /// new Position(1920, 1080);
         /// </summary>
-        public static Position LowRightPosition = new Position(1136, 640);
+        public static Position LowRightPosition = new Position(1148, 679);
 
 
         /// <summary>
@@ -93,21 +93,34 @@ namespace dm
         }
 
 
+
+
+
         /// <summary>
         /// 多点找色
         /// </summary>
         /// <param name="dm">大漠对象</param>
         /// <param name="model">Features 对象</param>
-        public static Position ColorsFunc(this XGDm dm, Features model)
+        /// <param name="isTest">是否全局</param>
+        public static Position ColorsFunc(this XGDm dm, Features model, bool isTest = false)
         {
-            if (model.UpleftPosition == null)
+            if (!isTest)
+            {
+                if (model.UpleftPosition == null)
+                {
+                    model.UpleftPosition = UpleftPosition;
+                }
+                if (model.LowRightPosition == null)
+                {
+                    model.LowRightPosition = LowRightPosition;
+                }
+            }
+            else
             {
                 model.UpleftPosition = UpleftPosition;
-            }
-            if (model.LowRightPosition == null)
-            {
                 model.LowRightPosition = LowRightPosition;
             }
+
             var result = dm.FindMultiColor(model.UpleftPosition.X,
                                       model.UpleftPosition.Y,
                                       model.LowRightPosition.X,
@@ -140,6 +153,25 @@ namespace dm
             catch
             {
                 return null;
+            }
+        }
+
+
+        public static Position WhileFeatures(this XGDm dm, Func<Position> func, string logName = "未定义")
+        {
+            var i = 0;
+            while (true)
+            {
+                i++;
+                var pos = func.Invoke();
+                if (pos != null) return pos;
+                Console.WriteLine($@"{logName}-找寻失败!正在重试,第{i}次!");
+                if (i > 500)
+                {
+                    Console.WriteLine($@"{logName}-找寻失败!超过500次,判定脚本失败!");
+                    return null;
+                }
+                dm.delay(100);
             }
         }
     }
