@@ -76,8 +76,28 @@ namespace dm
                 lowRightPosition = LowRightPosition;
             }
             var x = dm.FindStrE(upLeftPosition.X, upLeftPosition.Y, lowRightPosition.X, lowRightPosition.Y, fonts,
-                    colors, 0.7);
+                    colors, 0.9);
             return StringToPosition(x);
+        }
+
+        public static int GetFindStr(this XGDm dm, string fonts, string colors, Position upLeftPosition = null,
+            Position lowRightPosition = null)
+        {
+            if (upLeftPosition == null)
+            {
+                upLeftPosition = UpleftPosition;
+            }
+            if (lowRightPosition == null)
+            {
+                lowRightPosition = LowRightPosition;
+            }
+            var str = dm.FindStrEx(upLeftPosition.X, upLeftPosition.Y, lowRightPosition.X, lowRightPosition.Y, fonts, colors, 0.8);
+            var ary = str.Split('|');
+            if (ary[0] == "")
+            {
+                return 0;
+            }
+            return ary.Length;
         }
 
         /// <summary>

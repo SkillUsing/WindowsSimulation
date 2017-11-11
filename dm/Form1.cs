@@ -44,8 +44,8 @@ namespace dm
             Console.WriteLine("大漠版本号：" + _dm.Ver());
             var x = _dm.DmGuard(1, "np");
             Console.WriteLine("防护盾开启:" + x);
-            //x = _dm.SetDict(0, $"{_path}yyszk.txt");
-            //Console.WriteLine("字库设置:" + x);
+            x = _dm.SetDict(0, $"{_path}tt.txt");
+            Console.WriteLine("字库设置:" + x);
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
