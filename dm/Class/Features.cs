@@ -20,6 +20,16 @@
 
 
         /// <summary>
+        /// 战斗失败
+        /// </summary>
+        public static Features Errors = new Features()
+        {
+            UpleftPosition = new Position(550, 550),
+            LowRightPosition = new Position(585, 5982),
+            FirstColor = "4B607C-030304"
+        };
+
+        /// <summary>
         /// 找灯笼
         /// dir=0 是探索
         /// dir=1 是召唤

@@ -76,7 +76,7 @@ namespace dm
                 lowRightPosition = LowRightPosition;
             }
             var x = dm.FindStrE(upLeftPosition.X, upLeftPosition.Y, lowRightPosition.X, lowRightPosition.Y, fonts,
-                    colors, 0.9);
+                    colors, 0.8);
             return StringToPosition(x);
         }
 
@@ -186,7 +186,7 @@ namespace dm
                 var pos = func.Invoke();
                 if (pos != null) return pos;
                 Console.WriteLine($@"{logName}-找寻失败!正在重试,第{i}次!");
-                if (i > 500)
+                if (i > 200)
                 {
                     Console.WriteLine($@"{logName}-找寻失败!超过500次,判定脚本失败!");
                     return null;
