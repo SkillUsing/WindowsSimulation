@@ -31,13 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RabbitUI));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.dirChooser = new System.Windows.Forms.LinkLabel();
-            this.preSize = new System.Windows.Forms.Label();
-            this.buttonQueryCompact = new System.Windows.Forms.Button();
-            this.chosenDirDisplay = new System.Windows.Forms.Label();
             this.FlowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Panel4 = new System.Windows.Forms.Panel();
             this.Label2 = new System.Windows.Forms.Label();
@@ -57,29 +50,40 @@
             this.checkHiddenFiles = new System.Windows.Forms.CheckBox();
             this.checkRecursiveScan = new System.Windows.Forms.CheckBox();
             this.buttonCompress = new System.Windows.Forms.Button();
-            this.compactprogressbar = new System.Windows.Forms.ProgressBar();
-            this.progressPageLabel = new System.Windows.Forms.Label();
-            this.returnArrow = new System.Windows.Forms.Label();
-            this.progresspercent = new System.Windows.Forms.Label();
-            this.Label10 = new System.Windows.Forms.Label();
-            this.compRatioLabel = new System.Windows.Forms.Label();
-            this.PicShow = new System.Windows.Forms.PictureBox();
-            this.TextBox1 = new System.Windows.Forms.TextBox();
-            this.Button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.checkShowConOut = new System.Windows.Forms.CheckBox();
-            this.LogTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chosenDirDisplay = new System.Windows.Forms.Label();
+            this.buttonQueryCompact = new System.Windows.Forms.Button();
+            this.preSize = new System.Windows.Forms.Label();
+            this.dirChooser = new System.Windows.Forms.LinkLabel();
+            this.Label7 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.LogTextBox = new System.Windows.Forms.TextBox();
+            this.checkShowConOut = new System.Windows.Forms.CheckBox();
+            this.progresspercent = new System.Windows.Forms.Label();
+            this.returnArrow = new System.Windows.Forms.Label();
+            this.progressPageLabel = new System.Windows.Forms.Label();
+            this.compactprogressbar = new System.Windows.Forms.ProgressBar();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Button1 = new System.Windows.Forms.Button();
+            this.TextBox1 = new System.Windows.Forms.TextBox();
+            this.PicShow = new System.Windows.Forms.PictureBox();
+            this.compRatioLabel = new System.Windows.Forms.Label();
+            this.Label10 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.FlowLayoutPanel1.SuspendLayout();
             this.Panel4.SuspendLayout();
             this.Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicShow)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -113,107 +117,6 @@
             this.tabPage1.Text = "RabbitPage";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.LogTextBox);
-            this.tabPage3.Controls.Add(this.checkShowConOut);
-            this.tabPage3.Controls.Add(this.progresspercent);
-            this.tabPage3.Controls.Add(this.returnArrow);
-            this.tabPage3.Controls.Add(this.progressPageLabel);
-            this.tabPage3.Controls.Add(this.compactprogressbar);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(466, 572);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "RabbitProgressPage";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.Button1);
-            this.tabPage2.Controls.Add(this.TextBox1);
-            this.tabPage2.Controls.Add(this.PicShow);
-            this.tabPage2.Controls.Add(this.compRatioLabel);
-            this.tabPage2.Controls.Add(this.Label10);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(466, 572);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "RabbitAboutPage";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // Label7
-            // 
-            this.Label7.AutoSize = true;
-            this.Label7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Label7.Location = new System.Drawing.Point(16, 24);
-            this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(25, 18);
-            this.Label7.TabIndex = 21;
-            this.Label7.Text = "→ ";
-            // 
-            // dirChooser
-            // 
-            this.dirChooser.ActiveLinkColor = System.Drawing.Color.Red;
-            this.dirChooser.AutoSize = true;
-            this.dirChooser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dirChooser.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.dirChooser.Location = new System.Drawing.Point(43, 22);
-            this.dirChooser.Name = "dirChooser";
-            this.dirChooser.Size = new System.Drawing.Size(109, 21);
-            this.dirChooser.TabIndex = 22;
-            this.dirChooser.TabStop = true;
-            this.dirChooser.Text = "Progress View";
-            this.dirChooser.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            // 
-            // preSize
-            // 
-            this.preSize.AutoSize = true;
-            this.preSize.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.preSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.preSize.Location = new System.Drawing.Point(44, 92);
-            this.preSize.Name = "preSize";
-            this.preSize.Size = new System.Drawing.Size(55, 13);
-            this.preSize.TabIndex = 24;
-            this.preSize.Text = "(๑•̀ㅂ•́)و✧";
-            this.preSize.Visible = false;
-            // 
-            // buttonQueryCompact
-            // 
-            this.buttonQueryCompact.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonQueryCompact.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.buttonQueryCompact.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonQueryCompact.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonQueryCompact.ForeColor = System.Drawing.Color.DarkGray;
-            this.buttonQueryCompact.Location = new System.Drawing.Point(274, 92);
-            this.buttonQueryCompact.Name = "buttonQueryCompact";
-            this.buttonQueryCompact.Size = new System.Drawing.Size(144, 25);
-            this.buttonQueryCompact.TabIndex = 25;
-            this.buttonQueryCompact.Text = "Multithreading";
-            this.buttonQueryCompact.UseVisualStyleBackColor = false;
-            this.buttonQueryCompact.Visible = false;
-            // 
-            // chosenDirDisplay
-            // 
-            this.chosenDirDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chosenDirDisplay.AutoEllipsis = true;
-            this.chosenDirDisplay.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.chosenDirDisplay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chosenDirDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chosenDirDisplay.Location = new System.Drawing.Point(44, 54);
-            this.chosenDirDisplay.MaximumSize = new System.Drawing.Size(0, 25);
-            this.chosenDirDisplay.MinimumSize = new System.Drawing.Size(374, 25);
-            this.chosenDirDisplay.Name = "chosenDirDisplay";
-            this.chosenDirDisplay.Padding = new System.Windows.Forms.Padding(5);
-            this.chosenDirDisplay.Size = new System.Drawing.Size(374, 25);
-            this.chosenDirDisplay.TabIndex = 26;
-            // 
             // FlowLayoutPanel1
             // 
             this.FlowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -223,7 +126,7 @@
             this.FlowLayoutPanel1.Controls.Add(this.Panel4);
             this.FlowLayoutPanel1.Controls.Add(this.Panel3);
             this.FlowLayoutPanel1.Controls.Add(this.buttonCompress);
-            this.FlowLayoutPanel1.Location = new System.Drawing.Point(19, 153);
+            this.FlowLayoutPanel1.Location = new System.Drawing.Point(19, 186);
             this.FlowLayoutPanel1.MaximumSize = new System.Drawing.Size(700, 0);
             this.FlowLayoutPanel1.Name = "FlowLayoutPanel1";
             this.FlowLayoutPanel1.Size = new System.Drawing.Size(423, 332);
@@ -440,48 +343,127 @@
             this.buttonCompress.Text = "Start";
             this.buttonCompress.UseVisualStyleBackColor = false;
             // 
-            // compactprogressbar
+            // pictureBox1
             // 
-            this.compactprogressbar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pictureBox1.Location = new System.Drawing.Point(385, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
+            // chosenDirDisplay
+            // 
+            this.chosenDirDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chosenDirDisplay.AutoEllipsis = true;
+            this.chosenDirDisplay.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chosenDirDisplay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chosenDirDisplay.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chosenDirDisplay.Location = new System.Drawing.Point(44, 87);
+            this.chosenDirDisplay.MaximumSize = new System.Drawing.Size(0, 25);
+            this.chosenDirDisplay.MinimumSize = new System.Drawing.Size(374, 25);
+            this.chosenDirDisplay.Name = "chosenDirDisplay";
+            this.chosenDirDisplay.Padding = new System.Windows.Forms.Padding(5);
+            this.chosenDirDisplay.Size = new System.Drawing.Size(374, 25);
+            this.chosenDirDisplay.TabIndex = 26;
+            // 
+            // buttonQueryCompact
+            // 
+            this.buttonQueryCompact.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonQueryCompact.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.buttonQueryCompact.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonQueryCompact.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQueryCompact.ForeColor = System.Drawing.Color.DarkGray;
+            this.buttonQueryCompact.Location = new System.Drawing.Point(274, 125);
+            this.buttonQueryCompact.Name = "buttonQueryCompact";
+            this.buttonQueryCompact.Size = new System.Drawing.Size(144, 25);
+            this.buttonQueryCompact.TabIndex = 25;
+            this.buttonQueryCompact.Text = "Multithreading";
+            this.buttonQueryCompact.UseVisualStyleBackColor = false;
+            this.buttonQueryCompact.Visible = false;
+            // 
+            // preSize
+            // 
+            this.preSize.AutoSize = true;
+            this.preSize.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.preSize.Location = new System.Drawing.Point(44, 125);
+            this.preSize.Name = "preSize";
+            this.preSize.Size = new System.Drawing.Size(55, 13);
+            this.preSize.TabIndex = 24;
+            this.preSize.Text = "(๑•̀ㅂ•́)و✧";
+            this.preSize.Visible = false;
+            // 
+            // dirChooser
+            // 
+            this.dirChooser.ActiveLinkColor = System.Drawing.Color.Red;
+            this.dirChooser.AutoSize = true;
+            this.dirChooser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dirChooser.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.dirChooser.Location = new System.Drawing.Point(43, 55);
+            this.dirChooser.Name = "dirChooser";
+            this.dirChooser.Size = new System.Drawing.Size(109, 21);
+            this.dirChooser.TabIndex = 22;
+            this.dirChooser.TabStop = true;
+            this.dirChooser.Text = "Progress View";
+            this.dirChooser.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            // 
+            // Label7
+            // 
+            this.Label7.AutoSize = true;
+            this.Label7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label7.ForeColor = System.Drawing.Color.SteelBlue;
+            this.Label7.Location = new System.Drawing.Point(16, 57);
+            this.Label7.Name = "Label7";
+            this.Label7.Size = new System.Drawing.Size(25, 18);
+            this.Label7.TabIndex = 21;
+            this.Label7.Text = "→ ";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.LogTextBox);
+            this.tabPage3.Controls.Add(this.checkShowConOut);
+            this.tabPage3.Controls.Add(this.progresspercent);
+            this.tabPage3.Controls.Add(this.returnArrow);
+            this.tabPage3.Controls.Add(this.progressPageLabel);
+            this.tabPage3.Controls.Add(this.compactprogressbar);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(466, 572);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "RabbitProgressPage";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // LogTextBox
+            // 
+            this.LogTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.compactprogressbar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.compactprogressbar.Location = new System.Drawing.Point(40, 66);
-            this.compactprogressbar.MaximumSize = new System.Drawing.Size(374, 25);
-            this.compactprogressbar.Name = "compactprogressbar";
-            this.compactprogressbar.Size = new System.Drawing.Size(374, 25);
-            this.compactprogressbar.Step = 2;
-            this.compactprogressbar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.compactprogressbar.TabIndex = 25;
+            this.LogTextBox.Location = new System.Drawing.Point(40, 162);
+            this.LogTextBox.Multiline = true;
+            this.LogTextBox.Name = "LogTextBox";
+            this.LogTextBox.Size = new System.Drawing.Size(374, 404);
+            this.LogTextBox.TabIndex = 35;
+            this.LogTextBox.Text = "展示程序日志：";
             // 
-            // progressPageLabel
+            // checkShowConOut
             // 
-            this.progressPageLabel.AutoSize = true;
-            this.progressPageLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progressPageLabel.ForeColor = System.Drawing.Color.DimGray;
-            this.progressPageLabel.Location = new System.Drawing.Point(36, 28);
-            this.progressPageLabel.Name = "progressPageLabel";
-            this.progressPageLabel.Size = new System.Drawing.Size(222, 21);
-            this.progressPageLabel.TabIndex = 31;
-            this.progressPageLabel.Text = "Progress, execution: TaskName";
-            // 
-            // returnArrow
-            // 
-            this.returnArrow.AutoSize = true;
-            this.returnArrow.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.returnArrow.ForeColor = System.Drawing.Color.SteelBlue;
-            this.returnArrow.Location = new System.Drawing.Point(11, 32);
-            this.returnArrow.Name = "returnArrow";
-            this.returnArrow.Size = new System.Drawing.Size(25, 18);
-            this.returnArrow.TabIndex = 32;
-            this.returnArrow.Text = "← ";
-            this.returnArrow.Visible = false;
+            this.checkShowConOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkShowConOut.AutoSize = true;
+            this.checkShowConOut.ForeColor = System.Drawing.Color.DimGray;
+            this.checkShowConOut.Location = new System.Drawing.Point(258, 129);
+            this.checkShowConOut.Name = "checkShowConOut";
+            this.checkShowConOut.Size = new System.Drawing.Size(156, 16);
+            this.checkShowConOut.TabIndex = 34;
+            this.checkShowConOut.Text = "Show Detailed Progress";
+            this.checkShowConOut.UseVisualStyleBackColor = true;
             // 
             // progresspercent
             // 
             this.progresspercent.BackColor = System.Drawing.Color.Transparent;
             this.progresspercent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progresspercent.Location = new System.Drawing.Point(337, 28);
+            this.progresspercent.Location = new System.Drawing.Point(337, 46);
             this.progresspercent.Name = "progresspercent";
             this.progresspercent.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.progresspercent.Size = new System.Drawing.Size(77, 19);
@@ -489,27 +471,97 @@
             this.progresspercent.Text = "0%";
             this.progresspercent.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // Label10
+            // returnArrow
             // 
-            this.Label10.AutoSize = true;
-            this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Label10.Location = new System.Drawing.Point(13, 12);
-            this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(136, 25);
-            this.Label10.TabIndex = 24;
-            this.Label10.Text = "Rabbit About";
+            this.returnArrow.AutoSize = true;
+            this.returnArrow.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.returnArrow.ForeColor = System.Drawing.Color.SteelBlue;
+            this.returnArrow.Location = new System.Drawing.Point(13, 47);
+            this.returnArrow.Name = "returnArrow";
+            this.returnArrow.Size = new System.Drawing.Size(25, 18);
+            this.returnArrow.TabIndex = 32;
+            this.returnArrow.Text = "← ";
+            this.returnArrow.Visible = false;
             // 
-            // compRatioLabel
+            // progressPageLabel
             // 
-            this.compRatioLabel.AutoSize = true;
-            this.compRatioLabel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.compRatioLabel.Location = new System.Drawing.Point(74, 58);
-            this.compRatioLabel.Name = "compRatioLabel";
-            this.compRatioLabel.Size = new System.Drawing.Size(299, 21);
-            this.compRatioLabel.TabIndex = 28;
-            this.compRatioLabel.Text = "本软件一切解释权归小兔兔所有！！！";
-            this.compRatioLabel.Visible = false;
+            this.progressPageLabel.AutoSize = true;
+            this.progressPageLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progressPageLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.progressPageLabel.Location = new System.Drawing.Point(36, 44);
+            this.progressPageLabel.Name = "progressPageLabel";
+            this.progressPageLabel.Size = new System.Drawing.Size(222, 21);
+            this.progressPageLabel.TabIndex = 31;
+            this.progressPageLabel.Text = "Progress, execution: TaskName";
+            // 
+            // compactprogressbar
+            // 
+            this.compactprogressbar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.compactprogressbar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.compactprogressbar.Location = new System.Drawing.Point(40, 87);
+            this.compactprogressbar.MaximumSize = new System.Drawing.Size(374, 25);
+            this.compactprogressbar.Name = "compactprogressbar";
+            this.compactprogressbar.Size = new System.Drawing.Size(374, 25);
+            this.compactprogressbar.Step = 2;
+            this.compactprogressbar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.compactprogressbar.TabIndex = 25;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.Button1);
+            this.tabPage2.Controls.Add(this.TextBox1);
+            this.tabPage2.Controls.Add(this.PicShow);
+            this.tabPage2.Controls.Add(this.compRatioLabel);
+            this.tabPage2.Controls.Add(this.Label10);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(466, 572);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "RabbitAboutPage";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label9.Location = new System.Drawing.Point(77, 175);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(299, 21);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "本软件一切解释权归小兔兔所有！！！";
+            this.label9.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label1.Location = new System.Drawing.Point(77, 137);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(299, 21);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "本软件一切解释权归小兔兔所有！！！";
+            this.label1.Visible = false;
+            // 
+            // Button1
+            // 
+            this.Button1.Location = new System.Drawing.Point(340, 259);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(75, 21);
+            this.Button1.TabIndex = 31;
+            this.Button1.Text = "兔子按钮";
+            this.Button1.UseVisualStyleBackColor = true;
+            // 
+            // TextBox1
+            // 
+            this.TextBox1.Location = new System.Drawing.Point(53, 221);
+            this.TextBox1.Name = "TextBox1";
+            this.TextBox1.Size = new System.Drawing.Size(340, 21);
+            this.TextBox1.TabIndex = 30;
             // 
             // PicShow
             // 
@@ -523,81 +575,72 @@
             this.PicShow.TabIndex = 29;
             this.PicShow.TabStop = false;
             // 
-            // TextBox1
+            // compRatioLabel
             // 
-            this.TextBox1.Location = new System.Drawing.Point(49, 193);
-            this.TextBox1.Name = "TextBox1";
-            this.TextBox1.Size = new System.Drawing.Size(340, 21);
-            this.TextBox1.TabIndex = 30;
+            this.compRatioLabel.AutoSize = true;
+            this.compRatioLabel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.compRatioLabel.Location = new System.Drawing.Point(77, 99);
+            this.compRatioLabel.Name = "compRatioLabel";
+            this.compRatioLabel.Size = new System.Drawing.Size(299, 21);
+            this.compRatioLabel.TabIndex = 28;
+            this.compRatioLabel.Text = "本软件一切解释权归小兔兔所有！！！";
+            this.compRatioLabel.Visible = false;
             // 
-            // Button1
+            // Label10
             // 
-            this.Button1.Location = new System.Drawing.Point(340, 237);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(75, 21);
-            this.Button1.TabIndex = 31;
-            this.Button1.Text = "兔子按钮";
-            this.Button1.UseVisualStyleBackColor = true;
+            this.Label10.AutoSize = true;
+            this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.Label10.Location = new System.Drawing.Point(22, 40);
+            this.Label10.Name = "Label10";
+            this.Label10.Size = new System.Drawing.Size(136, 25);
+            this.Label10.TabIndex = 24;
+            this.Label10.Text = "Rabbit About";
             // 
-            // label1
+            // panel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label1.Location = new System.Drawing.Point(74, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 21);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "本软件一切解释权归小兔兔所有！！！";
-            this.label1.Visible = false;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.linkLabel2);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Location = new System.Drawing.Point(-14, -16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(473, 67);
+            this.panel1.TabIndex = 28;
             // 
-            // label9
+            // linkLabel2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label9.Location = new System.Drawing.Point(74, 134);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(299, 21);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "本软件一切解释权归小兔兔所有！！！";
-            this.label9.Visible = false;
+            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.Red;
+            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.linkLabel2.Location = new System.Drawing.Point(397, 32);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(33, 19);
+            this.linkLabel2.TabIndex = 23;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Info";
+            this.linkLabel2.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             // 
-            // checkShowConOut
+            // label11
             // 
-            this.checkShowConOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkShowConOut.AutoSize = true;
-            this.checkShowConOut.ForeColor = System.Drawing.Color.DimGray;
-            this.checkShowConOut.Location = new System.Drawing.Point(258, 105);
-            this.checkShowConOut.Name = "checkShowConOut";
-            this.checkShowConOut.Size = new System.Drawing.Size(156, 16);
-            this.checkShowConOut.TabIndex = 34;
-            this.checkShowConOut.Text = "Show Detailed Progress";
-            this.checkShowConOut.UseVisualStyleBackColor = true;
-            // 
-            // LogTextBox
-            // 
-            this.LogTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogTextBox.Location = new System.Drawing.Point(40, 127);
-            this.LogTextBox.Multiline = true;
-            this.LogTextBox.Name = "LogTextBox";
-            this.LogTextBox.Size = new System.Drawing.Size(374, 439);
-            this.LogTextBox.TabIndex = 35;
-            this.LogTextBox.Text = "展示程序日志：";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(385, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(34, 24);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(138, 28);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "兔兔的皮卡丘";
             // 
             // RabbitUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 613);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Name = "RabbitUI";
             this.Text = "RabbitUI";
@@ -605,17 +648,19 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.FlowLayoutPanel1.ResumeLayout(false);
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
             this.Panel3.ResumeLayout(false);
             this.Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicShow)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -646,7 +691,6 @@
         internal System.Windows.Forms.Label chosenDirDisplay;
         internal System.Windows.Forms.Button buttonQueryCompact;
         internal System.Windows.Forms.Label preSize;
-        internal System.Windows.Forms.LinkLabel dirChooser;
         internal System.Windows.Forms.Label Label7;
         private System.Windows.Forms.TabPage tabPage3;
         internal System.Windows.Forms.Label progresspercent;
@@ -664,5 +708,9 @@
         private System.Windows.Forms.TextBox LogTextBox;
         internal System.Windows.Forms.CheckBox checkShowConOut;
         private System.Windows.Forms.PictureBox pictureBox1;
+        internal System.Windows.Forms.LinkLabel dirChooser;
+        internal System.Windows.Forms.Panel panel1;
+        internal System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Label label11;
     }
 }
