@@ -8,9 +8,12 @@ using XGLib;
 
 namespace dm
 {
-    public partial class Form1 : Form
+   /// <summary>
+   /// 单线程 UI 阻塞线程
+   /// </summary>
+    public partial class From : Form
     {
-        public Form1()
+        public From()
         {
             InitializeComponent();
             pictureBox1.Cursor = Cursors.Hand;

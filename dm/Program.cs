@@ -14,7 +14,8 @@ namespace dm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new From());
+            Application.Run(new RabbitUI());
             //var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
             //var principal = new System.Security.Principal.WindowsPrincipal(identity);
             //if (principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator))

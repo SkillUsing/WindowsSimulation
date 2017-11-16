@@ -3,6 +3,9 @@ using XGLib;
 
 namespace dm
 {
+    /// <summary>
+    /// 阴阳师工具类
+    /// </summary>
     public class YysTools
     {
         /// <summary>
@@ -136,7 +139,7 @@ namespace dm
                     attackBtn.Dir = 3;
                     attackBtn.UpleftPosition = new Position(orc.X + 40, orc.Y);
                     attackBtn.LowRightPosition = new Position(downRight.X, downRight.Y + 72);
-                    dm.delay(500);
+                    dm.delay(1000);
                     //Capture(dm, attackBtn.UpleftPosition, attackBtn.LowRightPosition);
                     var model = dm.WhileFeatures(() => dm.ColorsFunc(attackBtn), "点击进攻");
                     if (model != null)
@@ -144,7 +147,7 @@ namespace dm
                         Console.WriteLine($"进攻按钮:{model.X},{model.Y}");
                         dm.delay(1500);
                         dm.MoveToClick(model);
-                        dm.delay(3000);
+                        dm.delay(5000);
                         //战斗开始
                         //循环检测准备按钮
                         model = dm.WhileFeatures(() => dm.ColorsFunc(Features.Prepare), "战斗准备");
@@ -153,7 +156,7 @@ namespace dm
                             Console.WriteLine($"准备:{model.X},{model.Y}");
 
                             Ready:
-                            dm.delay(2000);
+                            dm.delay(3000);
                             dm.MoveToClick(new Position(1111, 518));
                             //循环检测战斗是否结束
                             var attackIng = 0;
@@ -172,7 +175,7 @@ namespace dm
                                         new Position(449, 566));
                                     if (pos == null)
                                     {
-                                        if (attackIng > 200)
+                                        if (attackIng > 500)
                                         {
                                             goto Ready;
                                         }

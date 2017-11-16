@@ -66,12 +66,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RabbitUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabbitUI.Designer.cs">
+      <DependentUpon>RabbitUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources.cs" />
     <Compile Include="Tools\ApiTools.cs" />
     <Compile Include="Tools\DmTools.cs" />
+    <Compile Include="Tools\GameObjTaskModel.cs" />
     <Compile Include="Tools\YysTools.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabbitUI.resx">
+      <DependentUpon>RabbitUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.resources" />
   </ItemGroup>
