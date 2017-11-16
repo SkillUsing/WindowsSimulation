@@ -8,9 +8,12 @@ using XGLib;
 
 namespace dm
 {
-    public partial class Form1 : Form
+   /// <summary>
+   /// 单线程 UI 阻塞线程
+   /// </summary>
+    public partial class From : Form
     {
-        public Form1()
+        public From()
         {
             InitializeComponent();
             pictureBox1.Cursor = Cursors.Hand;
@@ -44,8 +47,8 @@ namespace dm
             Console.WriteLine("大漠版本号：" + _dm.Ver());
             var x = _dm.DmGuard(1, "np");
             Console.WriteLine("防护盾开启:" + x);
-            //x = _dm.SetDict(0, $"{_path}yyszk.txt");
-            //Console.WriteLine("字库设置:" + x);
+            x = _dm.SetDict(0, $"{_path}tt.txt");
+            Console.WriteLine("字库设置:" + x);
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)

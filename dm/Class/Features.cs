@@ -1,4 +1,4 @@
-namespace dm
+﻿namespace dm
 {
     public class Features
     {
@@ -18,6 +18,16 @@ namespace dm
 
         public int Dir { get; set; } = 0;
 
+
+        /// <summary>
+        /// 战斗失败
+        /// </summary>
+        public static Features Errors = new Features()
+        {
+            UpleftPosition = new Position(550, 550),
+            LowRightPosition = new Position(585, 5982),
+            FirstColor = "4B607C-030304"
+        };
 
         /// <summary>
         /// 找灯笼
@@ -56,9 +66,9 @@ namespace dm
         /// </summary>
         public static Features SelectBreakthrough = new Features()
         {
-            UpleftPosition = new Position(329,550),
+            UpleftPosition = new Position(329, 550),
 
-            LowRightPosition = new Position(418,634),
+            LowRightPosition = new Position(418, 634),
 
             FirstColor = "331f2b",
 
@@ -185,9 +195,9 @@ namespace dm
         /// </summary>
         public static Features AttackBtn = new Features()
         {
-            UpleftPosition = new Position(62, 15),
+            UpleftPosition = new Position(408, 33),
 
-            LowRightPosition = new Position(1209, 701),
+            LowRightPosition = new Position(1030, 605),
 
             FirstColor = "f4b25f",
 
@@ -313,13 +323,13 @@ namespace dm
         /// </summary>
         public static Features NoLabel = new Features()
         {
-            UpleftPosition = new Position(505, 106),
+            UpleftPosition = new Position(511, 221),
 
-            LowRightPosition = new Position(546, 665),
+            LowRightPosition = new Position(545, 595),
 
-            FirstColor = "b3a38d",
+            FirstColor = "B3A28D",
 
-            OffsetColor = "0|-1|b3a28c"
+            OffsetColor = "-10|1|A79783"
         };
 
         /// <summary>
@@ -327,9 +337,9 @@ namespace dm
         /// </summary>
         public static Features NoError2 = new Features()
         {
-            UpleftPosition = new Position(455, 116),
+            UpleftPosition = new Position(690, 160),
 
-            LowRightPosition = new Position(463, 172),
+            LowRightPosition = new Position(690, 221),
 
             FirstColor = "cbbaa1",
 
