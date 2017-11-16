@@ -35,10 +35,11 @@ namespace dm
         /// </summary>
         public void CrackingDm()
         {
+            var _path = $"{Path}dm.dll";
             var process = Process.GetProcessesByName("dm");
             foreach (ProcessModule ex in process[0].Modules)
             {
-                if (ex.FileName != Path) continue;
+                if (ex.FileName != _path) continue;
                 var offsetByDm = IntPtr.Add(ex.BaseAddress, 0x1063D0);
                 MemoryApi.WriteMemoryValue(offsetByDm, "dm", 1);
             }
