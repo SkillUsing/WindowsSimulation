@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
-using XGLib;
-// ReSharper disable InconsistentNaming
+
 
 namespace dm
 {
@@ -33,6 +25,8 @@ namespace dm
 
         private ArrayList Innerintptr { get; }
 
+        private bool Dragging { get; set; }
+
         private void RabbitUI_Load(object sender, EventArgs e)
         {
             //1.创建大漠对象
@@ -45,7 +39,69 @@ namespace dm
 
         public void SetLog(string logMessage)
         {
-            LogTextBox.Text += "\r\n" + logMessage;
+            LogTextBox.Text += @"
+" + logMessage;
+        }
+
+        private void GoProgressLinkLabel_Click(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            TabControlMain.SelectTab("LogTab");
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            TabControlMain.SelectTab("ConfigTab");
+
+        }
+
+        private void GoInfoLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var linkLabel = (LinkLabel)sender;
+            if (linkLabel.Text == @"Config")
+            {
+                TabControlMain.SelectTab("ConfigTab");
+                linkLabel.Text = @"Info";
+                MainLabel.Text = @"兔兔的皮卡丘";
+            }
+            else
+            {
+                TabControlMain.SelectTab("AboutTab");
+                linkLabel.Text = @"Config";
+                MainLabel.Text = @"关于兔兔";
+            }
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            Dragging = true;
+            Cursor = new Cursor(new MemoryStream(Resources.Eye));
+            ((PictureBox)sender).Image = Resources.Drag2;
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!Dragging) return;
+            var intPtr = WindowsApi.WindowFromPoint(MousePosition);
+            if (Innerintptr.Contains(intPtr))
+            {
+                intPtr = IntPtr.Zero;
+            }
+            if (intPtr == HwndCurrent) return;
+            ApiTools.DrawRectFrame(HwndCurrent);
+            ApiTools.DrawRectFrame(intPtr);
+            HwndCurrent = intPtr;
+            ShowIntPtr.Text = HwndCurrent.ToString();
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            var pictureBox = ((PictureBox)sender);
+            pictureBox.Image = Resources.Drag;
+            if (!Dragging) return;
+            Dragging = false;
+            Cursor = Cursors.Default;
+            if (HwndCurrent == IntPtr.Zero) return;
         }
     }
 }
