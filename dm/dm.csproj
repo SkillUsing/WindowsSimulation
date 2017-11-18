@@ -57,6 +57,7 @@
     <Compile Include="Api\MemoryApi.cs" />
     <Compile Include="Api\windowsApi.cs" />
     <Compile Include="Class\Features.cs" />
+    <Compile Include="Class\KeyValueViewModel.cs" />
     <Compile Include="Class\Position.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

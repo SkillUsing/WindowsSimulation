@@ -49,7 +49,7 @@
             this.Label14 = new System.Windows.Forms.Label();
             this.checkHiddenFiles = new System.Windows.Forms.CheckBox();
             this.checkRecursiveScan = new System.Windows.Forms.CheckBox();
-            this.buttonCompress = new System.Windows.Forms.Button();
+            this.Start = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ShowIntPtr = new System.Windows.Forms.Label();
             this.buttonQueryCompact = new System.Windows.Forms.Button();
@@ -57,6 +57,7 @@
             this.GoProgressLinkLabel = new System.Windows.Forms.LinkLabel();
             this.dirChooser = new System.Windows.Forms.LinkLabel();
             this.LogTab = new System.Windows.Forms.TabPage();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressPageLabel = new System.Windows.Forms.Label();
             this.ReturnConfigLinkLabel = new System.Windows.Forms.LinkLabel();
             this.LogTextBox = new System.Windows.Forms.TextBox();
@@ -74,7 +75,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.GoInfoLinkLabel = new System.Windows.Forms.LinkLabel();
             this.MainLabel = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.TabControlMain.SuspendLayout();
             this.ConfigTab.SuspendLayout();
             this.FlowLayoutPanel1.SuspendLayout();
@@ -126,7 +126,7 @@
             this.FlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.FlowLayoutPanel1.Controls.Add(this.Panel4);
             this.FlowLayoutPanel1.Controls.Add(this.Panel3);
-            this.FlowLayoutPanel1.Controls.Add(this.buttonCompress);
+            this.FlowLayoutPanel1.Controls.Add(this.Start);
             this.FlowLayoutPanel1.Location = new System.Drawing.Point(18, 174);
             this.FlowLayoutPanel1.MaximumSize = new System.Drawing.Size(700, 0);
             this.FlowLayoutPanel1.Name = "FlowLayoutPanel1";
@@ -168,7 +168,7 @@
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(89, 12);
             this.Label6.TabIndex = 19;
-            this.Label6.Text = "（ 殴打兔子 ）";
+            this.Label6.Text = "（ 狗粮升级 ）";
             // 
             // Label5
             // 
@@ -178,7 +178,7 @@
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(89, 12);
             this.Label5.TabIndex = 19;
-            this.Label5.Text = "（ 殴打兔子 ）";
+            this.Label5.Text = "（ 御魂接受 ）";
             // 
             // Label4
             // 
@@ -188,7 +188,7 @@
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(89, 12);
             this.Label4.TabIndex = 19;
-            this.Label4.Text = "（ 殴打兔子 ）";
+            this.Label4.Text = "（ 御魂邀请 ）";
             // 
             // Label3
             // 
@@ -198,7 +198,7 @@
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(89, 12);
             this.Label3.TabIndex = 19;
-            this.Label3.Text = "（ 殴打兔子 ）";
+            this.Label3.Text = "（ 结界突破 ）";
             // 
             // compressX4
             // 
@@ -329,20 +329,21 @@
             this.checkRecursiveScan.Text = "Beat the hare";
             this.checkRecursiveScan.UseVisualStyleBackColor = true;
             // 
-            // buttonCompress
+            // Start
             // 
-            this.buttonCompress.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonCompress.Enabled = false;
-            this.buttonCompress.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCompress.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCompress.ForeColor = System.Drawing.Color.DarkGray;
-            this.buttonCompress.Location = new System.Drawing.Point(8, 279);
-            this.buttonCompress.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
-            this.buttonCompress.Name = "buttonCompress";
-            this.buttonCompress.Size = new System.Drawing.Size(390, 50);
-            this.buttonCompress.TabIndex = 3;
-            this.buttonCompress.Text = "Start";
-            this.buttonCompress.UseVisualStyleBackColor = false;
+            this.Start.BackColor = System.Drawing.Color.Gainsboro;
+            this.Start.Enabled = false;
+            this.Start.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Start.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start.ForeColor = System.Drawing.Color.DarkGray;
+            this.Start.Location = new System.Drawing.Point(8, 279);
+            this.Start.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(390, 50);
+            this.Start.TabIndex = 3;
+            this.Start.Text = "Start";
+            this.Start.UseVisualStyleBackColor = false;
+            this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
             // pictureBox1
             // 
@@ -445,6 +446,17 @@
             this.LogTab.TabIndex = 2;
             this.LogTab.Text = "RabbitProgressPage";
             this.LogTab.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.progressBar1.Location = new System.Drawing.Point(40, 80);
+            this.progressBar1.MaximumSize = new System.Drawing.Size(374, 25);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(374, 25);
+            this.progressBar1.Step = 2;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 37;
             // 
             // progressPageLabel
             // 
@@ -645,18 +657,6 @@
             this.MainLabel.TabIndex = 0;
             this.MainLabel.Text = "兔兔的皮卡丘";
             // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.progressBar1.Location = new System.Drawing.Point(40, 80);
-            this.progressBar1.MaximumSize = new System.Drawing.Size(374, 25);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(374, 25);
-            this.progressBar1.Step = 2;
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 37;
-            this.progressBar1.Value = 20;
-            // 
             // RabbitUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -711,7 +711,7 @@
         internal System.Windows.Forms.Label Label14;
         internal System.Windows.Forms.CheckBox checkHiddenFiles;
         internal System.Windows.Forms.CheckBox checkRecursiveScan;
-        internal System.Windows.Forms.Button buttonCompress;
+        internal System.Windows.Forms.Button Start;
         internal System.Windows.Forms.Label ShowIntPtr;
         internal System.Windows.Forms.Button buttonQueryCompact;
         internal System.Windows.Forms.Label preSize;

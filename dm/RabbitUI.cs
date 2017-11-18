@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 
@@ -24,6 +26,8 @@ namespace dm
         private IntPtr HwndCurrent { get; set; }
 
         private ArrayList Innerintptr { get; }
+
+        public List<KeyValueViewModel<Thread>> ThreadList = new List<KeyValueViewModel<Thread>>();
 
         private bool Dragging { get; set; }
 
@@ -103,5 +107,20 @@ namespace dm
             Cursor = Cursors.Default;
             if (HwndCurrent == IntPtr.Zero) return;
         }
+
+        private void Start_Click(object sender, EventArgs e)
+        {
+            var th = new Thread(() =>
+            {
+                
+            }) {IsBackground = true};
+            ThreadList.Add(new KeyValueViewModel<Thread>()
+            {
+                Key = "",
+                Value = th
+            });
+            th.Start();
+        }
+
     }
 }
