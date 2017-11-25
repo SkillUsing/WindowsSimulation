@@ -32,7 +32,7 @@
             this.TabControlMain = new System.Windows.Forms.TabControl();
             this.ConfigTab = new System.Windows.Forms.TabPage();
             this.FlowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.Panel4 = new System.Windows.Forms.Panel();
+            this.FunPanel = new System.Windows.Forms.Panel();
             this.Label2 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.Label5 = new System.Windows.Forms.Label();
@@ -44,11 +44,11 @@
             this.compressX16 = new System.Windows.Forms.RadioButton();
             this.Panel3 = new System.Windows.Forms.Panel();
             this.Label8 = new System.Windows.Forms.Label();
-            this.CheckBox1 = new System.Windows.Forms.CheckBox();
-            this.checkForceCompression = new System.Windows.Forms.CheckBox();
+            this.humanSimulation = new System.Windows.Forms.CheckBox();
+            this.infinityTime = new System.Windows.Forms.CheckBox();
             this.Label14 = new System.Windows.Forms.Label();
-            this.checkHiddenFiles = new System.Windows.Forms.CheckBox();
-            this.checkRecursiveScan = new System.Windows.Forms.CheckBox();
+            this.syncAccount = new System.Windows.Forms.CheckBox();
+            this.OnlyOne = new System.Windows.Forms.CheckBox();
             this.Start = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ShowIntPtr = new System.Windows.Forms.Label();
@@ -75,10 +75,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.GoInfoLinkLabel = new System.Windows.Forms.LinkLabel();
             this.MainLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.TabControlMain.SuspendLayout();
             this.ConfigTab.SuspendLayout();
             this.FlowLayoutPanel1.SuspendLayout();
-            this.Panel4.SuspendLayout();
+            this.FunPanel.SuspendLayout();
             this.Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LogTab.SuspendLayout();
@@ -124,7 +127,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlowLayoutPanel1.AutoSize = true;
             this.FlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.FlowLayoutPanel1.Controls.Add(this.Panel4);
+            this.FlowLayoutPanel1.Controls.Add(this.FunPanel);
             this.FlowLayoutPanel1.Controls.Add(this.Panel3);
             this.FlowLayoutPanel1.Controls.Add(this.Start);
             this.FlowLayoutPanel1.Location = new System.Drawing.Point(18, 174);
@@ -133,21 +136,21 @@
             this.FlowLayoutPanel1.Size = new System.Drawing.Size(423, 332);
             this.FlowLayoutPanel1.TabIndex = 27;
             // 
-            // Panel4
+            // FunPanel
             // 
-            this.Panel4.Controls.Add(this.Label2);
-            this.Panel4.Controls.Add(this.Label6);
-            this.Panel4.Controls.Add(this.Label5);
-            this.Panel4.Controls.Add(this.Label4);
-            this.Panel4.Controls.Add(this.Label3);
-            this.Panel4.Controls.Add(this.compressX4);
-            this.Panel4.Controls.Add(this.compressLZX);
-            this.Panel4.Controls.Add(this.compressX8);
-            this.Panel4.Controls.Add(this.compressX16);
-            this.Panel4.Location = new System.Drawing.Point(3, 3);
-            this.Panel4.Name = "Panel4";
-            this.Panel4.Size = new System.Drawing.Size(262, 126);
-            this.Panel4.TabIndex = 24;
+            this.FunPanel.Controls.Add(this.Label2);
+            this.FunPanel.Controls.Add(this.Label6);
+            this.FunPanel.Controls.Add(this.Label5);
+            this.FunPanel.Controls.Add(this.Label4);
+            this.FunPanel.Controls.Add(this.Label3);
+            this.FunPanel.Controls.Add(this.compressX4);
+            this.FunPanel.Controls.Add(this.compressLZX);
+            this.FunPanel.Controls.Add(this.compressX8);
+            this.FunPanel.Controls.Add(this.compressX16);
+            this.FunPanel.Location = new System.Drawing.Point(3, 3);
+            this.FunPanel.Name = "FunPanel";
+            this.FunPanel.Size = new System.Drawing.Size(262, 126);
+            this.FunPanel.TabIndex = 24;
             // 
             // Label2
             // 
@@ -208,8 +211,10 @@
             this.compressX4.Name = "compressX4";
             this.compressX4.Size = new System.Drawing.Size(101, 16);
             this.compressX4.TabIndex = 9;
+            this.compressX4.Tag = "0";
             this.compressX4.Text = "Beat the hare";
             this.compressX4.UseVisualStyleBackColor = true;
+            this.compressX4.CheckedChanged += new System.EventHandler(this.RedioBtnChange);
             // 
             // compressLZX
             // 
@@ -219,21 +224,23 @@
             this.compressLZX.Name = "compressLZX";
             this.compressLZX.Size = new System.Drawing.Size(101, 16);
             this.compressLZX.TabIndex = 12;
+            this.compressLZX.Tag = "3";
             this.compressLZX.Text = "Beat the hare";
             this.compressLZX.UseVisualStyleBackColor = true;
+            this.compressLZX.CheckedChanged += new System.EventHandler(this.RedioBtnChange);
             // 
             // compressX8
             // 
             this.compressX8.AutoSize = true;
-            this.compressX8.Checked = true;
             this.compressX8.ForeColor = System.Drawing.Color.DimGray;
             this.compressX8.Location = new System.Drawing.Point(35, 58);
             this.compressX8.Name = "compressX8";
             this.compressX8.Size = new System.Drawing.Size(101, 16);
             this.compressX8.TabIndex = 10;
-            this.compressX8.TabStop = true;
+            this.compressX8.Tag = "1";
             this.compressX8.Text = "Beat the hare";
             this.compressX8.UseVisualStyleBackColor = true;
+            this.compressX8.CheckedChanged += new System.EventHandler(this.RedioBtnChange);
             // 
             // compressX16
             // 
@@ -243,17 +250,22 @@
             this.compressX16.Name = "compressX16";
             this.compressX16.Size = new System.Drawing.Size(101, 16);
             this.compressX16.TabIndex = 11;
+            this.compressX16.Tag = "2";
             this.compressX16.Text = "Beat the hare";
             this.compressX16.UseVisualStyleBackColor = true;
+            this.compressX16.CheckedChanged += new System.EventHandler(this.RedioBtnChange);
             // 
             // Panel3
             // 
             this.Panel3.Controls.Add(this.Label8);
-            this.Panel3.Controls.Add(this.CheckBox1);
-            this.Panel3.Controls.Add(this.checkForceCompression);
+            this.Panel3.Controls.Add(this.humanSimulation);
+            this.Panel3.Controls.Add(this.infinityTime);
+            this.Panel3.Controls.Add(this.label11);
+            this.Panel3.Controls.Add(this.label10);
+            this.Panel3.Controls.Add(this.label7);
             this.Panel3.Controls.Add(this.Label14);
-            this.Panel3.Controls.Add(this.checkHiddenFiles);
-            this.Panel3.Controls.Add(this.checkRecursiveScan);
+            this.Panel3.Controls.Add(this.syncAccount);
+            this.Panel3.Controls.Add(this.OnlyOne);
             this.Panel3.Location = new System.Drawing.Point(3, 135);
             this.Panel3.Name = "Panel3";
             this.Panel3.Size = new System.Drawing.Size(417, 138);
@@ -270,69 +282,66 @@
             this.Label8.TabIndex = 18;
             this.Label8.Text = "Select Additional Arguments";
             // 
-            // CheckBox1
+            // humanSimulation
             // 
-            this.CheckBox1.AutoSize = true;
-            this.CheckBox1.Enabled = false;
-            this.CheckBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.CheckBox1.Location = new System.Drawing.Point(35, 108);
-            this.CheckBox1.Name = "CheckBox1";
-            this.CheckBox1.Size = new System.Drawing.Size(102, 16);
-            this.CheckBox1.TabIndex = 17;
-            this.CheckBox1.Text = "Beat the hare";
-            this.CheckBox1.UseVisualStyleBackColor = true;
+            this.humanSimulation.AutoSize = true;
+            this.humanSimulation.Enabled = false;
+            this.humanSimulation.ForeColor = System.Drawing.Color.DimGray;
+            this.humanSimulation.Location = new System.Drawing.Point(35, 108);
+            this.humanSimulation.Name = "humanSimulation";
+            this.humanSimulation.Size = new System.Drawing.Size(72, 16);
+            this.humanSimulation.TabIndex = 17;
+            this.humanSimulation.Text = "人性模拟";
+            this.humanSimulation.UseVisualStyleBackColor = true;
             // 
-            // checkForceCompression
+            // infinityTime
             // 
-            this.checkForceCompression.AutoSize = true;
-            this.checkForceCompression.ForeColor = System.Drawing.Color.DimGray;
-            this.checkForceCompression.Location = new System.Drawing.Point(35, 66);
-            this.checkForceCompression.Name = "checkForceCompression";
-            this.checkForceCompression.Size = new System.Drawing.Size(102, 16);
-            this.checkForceCompression.TabIndex = 7;
-            this.checkForceCompression.Text = "Beat the hare";
-            this.checkForceCompression.UseVisualStyleBackColor = true;
+            this.infinityTime.AutoSize = true;
+            this.infinityTime.ForeColor = System.Drawing.Color.DimGray;
+            this.infinityTime.Location = new System.Drawing.Point(35, 66);
+            this.infinityTime.Name = "infinityTime";
+            this.infinityTime.Size = new System.Drawing.Size(84, 16);
+            this.infinityTime.TabIndex = 7;
+            this.infinityTime.Text = "无超时时间";
+            this.infinityTime.UseVisualStyleBackColor = true;
             // 
             // Label14
             // 
             this.Label14.AutoSize = true;
             this.Label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.Label14.Location = new System.Drawing.Point(140, 64);
+            this.Label14.Location = new System.Drawing.Point(116, 62);
             this.Label14.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.Label14.Name = "Label14";
             this.Label14.Size = new System.Drawing.Size(22, 17);
             this.Label14.TabIndex = 32;
             this.Label14.Text = "(?)";
             // 
-            // checkHiddenFiles
+            // syncAccount
             // 
-            this.checkHiddenFiles.AutoSize = true;
-            this.checkHiddenFiles.ForeColor = System.Drawing.Color.DimGray;
-            this.checkHiddenFiles.Location = new System.Drawing.Point(35, 87);
-            this.checkHiddenFiles.Name = "checkHiddenFiles";
-            this.checkHiddenFiles.Size = new System.Drawing.Size(102, 16);
-            this.checkHiddenFiles.TabIndex = 6;
-            this.checkHiddenFiles.Text = "Beat the hare";
-            this.checkHiddenFiles.UseVisualStyleBackColor = true;
+            this.syncAccount.AutoSize = true;
+            this.syncAccount.ForeColor = System.Drawing.Color.DimGray;
+            this.syncAccount.Location = new System.Drawing.Point(35, 88);
+            this.syncAccount.Name = "syncAccount";
+            this.syncAccount.Size = new System.Drawing.Size(108, 16);
+            this.syncAccount.TabIndex = 6;
+            this.syncAccount.Text = "多账号同步等待";
+            this.syncAccount.UseVisualStyleBackColor = true;
             // 
-            // checkRecursiveScan
+            // OnlyOne
             // 
-            this.checkRecursiveScan.AutoSize = true;
-            this.checkRecursiveScan.Checked = true;
-            this.checkRecursiveScan.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkRecursiveScan.ForeColor = System.Drawing.Color.DimGray;
-            this.checkRecursiveScan.Location = new System.Drawing.Point(35, 44);
-            this.checkRecursiveScan.Name = "checkRecursiveScan";
-            this.checkRecursiveScan.Size = new System.Drawing.Size(102, 16);
-            this.checkRecursiveScan.TabIndex = 5;
-            this.checkRecursiveScan.Text = "Beat the hare";
-            this.checkRecursiveScan.UseVisualStyleBackColor = true;
+            this.OnlyOne.AutoSize = true;
+            this.OnlyOne.ForeColor = System.Drawing.Color.DimGray;
+            this.OnlyOne.Location = new System.Drawing.Point(35, 44);
+            this.OnlyOne.Name = "OnlyOne";
+            this.OnlyOne.Size = new System.Drawing.Size(96, 16);
+            this.OnlyOne.TabIndex = 5;
+            this.OnlyOne.Text = "只突破一个寮";
+            this.OnlyOne.UseVisualStyleBackColor = true;
             // 
             // Start
             // 
             this.Start.BackColor = System.Drawing.Color.Gainsboro;
-            this.Start.Enabled = false;
             this.Start.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Start.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Start.ForeColor = System.Drawing.Color.DarkGray;
@@ -657,6 +666,42 @@
             this.MainLabel.TabIndex = 0;
             this.MainLabel.Text = "兔兔的皮卡丘";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.label7.Location = new System.Drawing.Point(137, 85);
+            this.label7.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(22, 17);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "(?)";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.label10.Location = new System.Drawing.Point(105, 105);
+            this.label10.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(22, 17);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "(?)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.label11.Location = new System.Drawing.Point(130, 41);
+            this.label11.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(22, 17);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "(?)";
+            // 
             // RabbitUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -673,8 +718,8 @@
             this.ConfigTab.ResumeLayout(false);
             this.ConfigTab.PerformLayout();
             this.FlowLayoutPanel1.ResumeLayout(false);
-            this.Panel4.ResumeLayout(false);
-            this.Panel4.PerformLayout();
+            this.FunPanel.ResumeLayout(false);
+            this.FunPanel.PerformLayout();
             this.Panel3.ResumeLayout(false);
             this.Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -694,7 +739,7 @@
         private System.Windows.Forms.TabControl TabControlMain;
         private System.Windows.Forms.TabPage ConfigTab;
         internal System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel1;
-        internal System.Windows.Forms.Panel Panel4;
+        internal System.Windows.Forms.Panel FunPanel;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label6;
         internal System.Windows.Forms.Label Label5;
@@ -706,11 +751,11 @@
         internal System.Windows.Forms.RadioButton compressX16;
         internal System.Windows.Forms.Panel Panel3;
         internal System.Windows.Forms.Label Label8;
-        internal System.Windows.Forms.CheckBox CheckBox1;
-        internal System.Windows.Forms.CheckBox checkForceCompression;
+        internal System.Windows.Forms.CheckBox humanSimulation;
+        internal System.Windows.Forms.CheckBox infinityTime;
         internal System.Windows.Forms.Label Label14;
-        internal System.Windows.Forms.CheckBox checkHiddenFiles;
-        internal System.Windows.Forms.CheckBox checkRecursiveScan;
+        internal System.Windows.Forms.CheckBox syncAccount;
+        internal System.Windows.Forms.CheckBox OnlyOne;
         internal System.Windows.Forms.Button Start;
         internal System.Windows.Forms.Label ShowIntPtr;
         internal System.Windows.Forms.Button buttonQueryCompact;
@@ -737,5 +782,8 @@
         private System.Windows.Forms.LinkLabel ReturnConfigLinkLabel;
         internal System.Windows.Forms.Label TaskLabel;
         internal System.Windows.Forms.ProgressBar progressBar1;
+        internal System.Windows.Forms.Label label11;
+        internal System.Windows.Forms.Label label10;
+        internal System.Windows.Forms.Label label7;
     }
 }

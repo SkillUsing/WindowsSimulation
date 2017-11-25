@@ -110,10 +110,15 @@ namespace dm
 
         private void Start_Click(object sender, EventArgs e)
         {
+            if (HwndCurrent == IntPtr.Zero)
+            {
+                return;
+            }
             var th = new Thread(() =>
             {
-                
-            }) {IsBackground = true};
+
+            })
+            { IsBackground = true };
             ThreadList.Add(new KeyValueViewModel<Thread>()
             {
                 Key = "",
@@ -122,5 +127,20 @@ namespace dm
             th.Start();
         }
 
+
+        private void RedioBtnChange(object sender, EventArgs e)
+        {
+            var radio = (RadioButton)sender;
+            foreach (var item in FunPanel.Controls)
+            {
+                // ReSharper disable once CanBeReplacedWithTryCastAndCheckForNull
+                if (!(item is RadioButton)) continue;
+                var btn = (RadioButton)item;
+                if (btn == radio && btn.Checked)
+                {
+                    MessageBox.Show($@"{btn.Tag}");
+                }
+            }
+        }
     }
 }
