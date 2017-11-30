@@ -29,15 +29,16 @@ namespace dm
 
         public List<KeyValueViewModel<Thread>> ThreadList = new List<KeyValueViewModel<Thread>>();
 
+        public int RadioTag { get; set; }
+
         private bool Dragging { get; set; }
 
         private void RabbitUI_Load(object sender, EventArgs e)
         {
             //1.创建大漠对象
-            var model = GameObjTaskModel.GetYysGameObject(this);
+            
             //2.以Model创建线程
-            Console.WriteLine(model);
-            //3.执行对应方法
+            //Console.WriteLine(model);
         }
 
 
@@ -116,12 +117,27 @@ namespace dm
             }
             var th = new Thread(() =>
             {
+                var model = GameObjTaskModel.GetYysGameObject(this);
+                model.HwndCurrent = HwndCurrent;
+                switch (RadioTag)
+                {
+                    case 0:
+                        YysTools.Main(model.Yys);
+                        break;
+                    case 1:
 
-            })
-            { IsBackground = true };
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                }
+            }){ IsBackground = true };
             ThreadList.Add(new KeyValueViewModel<Thread>()
             {
-                Key = "",
+                Key = $"{RadioTag}",
                 Value = th
             });
             th.Start();
@@ -138,9 +154,19 @@ namespace dm
                 var btn = (RadioButton)item;
                 if (btn == radio && btn.Checked)
                 {
+                    RadioTag = Convert.ToInt32(btn.Tag);
                     MessageBox.Show($@"{btn.Tag}");
                 }
             }
+        }
+
+        private void buttonQueryCompact_Click(object sender, EventArgs e)
+        {
+            foreach (var item in ThreadList)
+            {
+                item.Value.Abort();
+            }
+
         }
     }
 }

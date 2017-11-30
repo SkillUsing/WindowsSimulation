@@ -27,7 +27,7 @@ namespace dm
         /// <summary>
         ///  阴阳师窗体句柄对象
         /// </summary>
-        private IntPtr HwndCurrent { get; set; }
+        public IntPtr HwndCurrent { get; set; }
 
         /// <summary>
         /// 破解大漠收费限制
@@ -64,6 +64,7 @@ namespace dm
             yysModel.Yys.Create();
             yysModel.Form = form;
             yysModel.CrackingDm();
+
             return yysModel;
         }
     }
