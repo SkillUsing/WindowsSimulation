@@ -29,6 +29,8 @@ namespace dm
 
         public List<KeyValueViewModel<Thread>> ThreadList = new List<KeyValueViewModel<Thread>>();
 
+        public List<GameObjTaskModel> ThreadGame =new List<GameObjTaskModel>();
+
         public int RadioTag { get; set; }
 
         private bool Dragging { get; set; }
@@ -115,10 +117,11 @@ namespace dm
             {
                 return;
             }
+            var model = GameObjTaskModel.GetYysGameObject(this);
+            model.HwndCurrent = HwndCurrent;
+            ThreadGame.Add(model);
             var th = new Thread(() =>
             {
-                var model = GameObjTaskModel.GetYysGameObject(this);
-                model.HwndCurrent = HwndCurrent;
                 switch (RadioTag)
                 {
                     case 0:
@@ -166,7 +169,10 @@ namespace dm
             {
                 item.Value.Abort();
             }
-
+            foreach (var item in ThreadGame)
+            {
+                item.Yys.UnBindWindow();
+            }
         }
     }
 }
