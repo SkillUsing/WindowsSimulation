@@ -119,6 +119,9 @@ namespace dm
             }
             var model = GameObjTaskModel.GetYysGameObject(this);
             model.HwndCurrent = HwndCurrent;
+            model.Yys.SetAero(0);//关闭Aero
+            //后台绑定且隐藏dll
+            var x = model.Yys.BindWindowEx(HwndCurrent, "dx2", "windows3", "windows", "", 0);
             ThreadGame.Add(model);
             var th = new Thread(() =>
             {
