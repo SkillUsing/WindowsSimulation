@@ -131,7 +131,7 @@ namespace dm
                         YysTools.Main(model.Yys);
                         break;
                     case 1:
-
+                        YysTools.StartYuHun(model.Yys);
                         break;
                     case 2:
 

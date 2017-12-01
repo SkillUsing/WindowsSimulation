@@ -18,7 +18,7 @@ namespace dm
         /// new Position(1136, 640);
         /// new Position(1920, 1080);
         /// </summary>
-        public static Position LowRightPosition = new Position(1148, 679);
+        public static Position LowRightPosition = new Position(2000, 2000);
 
 
         /// <summary>

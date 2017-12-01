@@ -15,4 +15,14 @@
             Y = y;
         }
     }
+
+    public static class PositionEx
+    {
+        public static Position OffsetPosition(this Position pos, Position offsetPos)
+        {
+            pos.X = pos.X + offsetPos.X;
+            pos.Y = pos.Y + offsetPos.Y;
+            return pos;
+        }
+    }
 }

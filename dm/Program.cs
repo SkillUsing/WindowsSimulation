@@ -14,8 +14,8 @@ namespace dm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new From());
-            Application.Run(new RabbitUI());
+            Application.Run(new From());
+            //Application.Run(new RabbitUI());
         }
     }
 }

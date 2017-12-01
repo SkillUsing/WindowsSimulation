@@ -223,6 +223,85 @@ namespace dm
         }
 
 
+        public static void StartYuHun(XGDm dm)
+        {
+            //简单邀请版本
+            //锁定阵容,(不用点击准备)
+            //循环检测并点击开始战斗按钮
+            //循环检测战斗结束并点击结束跳过动画(已经有)
+            //检测继续邀请并点击继续(不绑定邀请,战斗失败多一步检测)
+
+            //循环检测并点击开始战斗按钮
+            var pos = dm.WhileFeatures(() => dm.GetPositionByOcr("开始战斗", "52422D-2C1F0E", new Position(867, 515), new Position(994, 566)), "循环检测并点击开始战斗按钮");
+            if (pos != null)
+            {
+                dm.delay(200);
+                dm.MoveToClick(pos.OffsetPosition(new Position(5, 5)));
+            }
+            //循环检测战斗结束并点击结束跳过动画
+            WhileEnd(dm);
+            //检测继续邀请并点击继续
+            pos = dm.WhileFeatures(() => dm.GetPositionByOcr("御魂继续", "52422D-2C1F0E", new Position(867, 515), new Position(994, 566)), "循环检测并点击开始战斗按钮");
+            if (pos != null)
+            {
+                dm.delay(200);
+                dm.MoveToClick(pos.OffsetPosition(new Position(5, 5)));
+            }
+        }
+
+
+        public static void JieShouYuHun(XGDm dm)
+        {
+            //到这里,已经可以挂机了.
+            //接受御魂邀请
+            //接受者自动准备(第一次是自动准备么? 可爱的小兔子.兔子人咧)
+            //循环检测接受组队邀请
+            //点击准备
+            //循环检测战斗是否结束
+        }
+
+
+        public static void WhileEnd(XGDm dm)
+        {
+            var attackIng = 0;
+            var isNotOk = true;
+            Position pos = null;
+            while (isNotOk)
+            {
+                Console.WriteLine(@"战斗检测中...");
+                dm.delay(200);
+                //失败
+                pos = dm.GetPositionByOcr("战斗失败", "4B607C-030304", new Position(550, 550), new Position(585, 5982));
+                if (pos == null)
+                {
+                    dm.delay(200);
+                    //胜利
+                    pos = dm.GetPositionByOcr("战斗结束", "7E9DA7-5E5556", new Position(415, 525),
+                        new Position(449, 566));
+                    if (pos == null)
+                    {
+                        if (attackIng > 500)
+                        {
+                            goto End;
+                        }
+                        attackIng++;
+                        continue;
+                    }
+                }
+                isNotOk = false;
+            }
+            End:
+
+            Console.WriteLine(@"战斗结束!");
+            dm.delay(500);
+            if (pos == null)
+            {
+                pos = new Position(994, 515);
+            }
+            dm.MoveToClick(pos);
+        }
+
+
         public static void Capture(XGDm dm, Position upleft, Position downRight)
         {
             var time = DateTime.Now.ToString("hh-mm-ss");
