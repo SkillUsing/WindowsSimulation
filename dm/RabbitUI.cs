@@ -40,7 +40,10 @@ namespace dm
 
         }
 
-
+        /// <summary>
+        /// 添加日志
+        /// </summary>
+        /// <param name="logMessage">日志名称</param>
         public void SetLog(string logMessage)
         {
             LogTextBox.Text += @"
@@ -150,16 +153,18 @@ namespace dm
             SetLog(@"关闭系统Aero效果");
             var x = model.Yys.BindWindowEx(HwndCurrent, "dx2", "windows3", "windows", "", 0);
             SetLog($"后台绑定:{x}");
-            if (x == 1) return;
+            if (x != 1) return;
             ThreadGame.Add(model);
             var th = new Thread(() =>
                 {
                     switch (RadioTag)
                     {
                         case 0:
+                            SetLog("开始结界突破!");
                             YysTools.Main(model.Yys);
                             break;
                         case 1:
+                            SetLog("开始御魂邀请!");
                             YysTools.StartYuHun(model.Yys);
                             break;
                         case 2:
