@@ -225,29 +225,34 @@ namespace dm
 
         public static void StartYuHun(XGDm dm)
         {
+            Start:
             //简单邀请版本
-            //锁定阵容,(不用点击准备)
-            //循环检测并点击开始战斗按钮
-            //循环检测战斗结束并点击结束跳过动画(已经有)
-            //检测继续邀请并点击继续(不绑定邀请,战斗失败多一步检测)
-
-            //循环检测并点击开始战斗按钮
             var pos = dm.WhileFeatures(() => dm.GetPositionByOcr("开始战斗", "52422D-2C1F0E", new Position(867, 515), new Position(994, 566)), "循环检测并点击开始战斗按钮");
             if (pos != null)
             {
                 dm.delay(200);
                 dm.MoveToClick(pos.OffsetPosition(new Position(5, 5)));
+
+                var isOk = false;
+                while (!isOk)
+                {
+                    pos = dm.GetPositionByOcr("御魂继续", "52422D-2C1F0E", new Position(617, 336), new Position(726, 401));
+                    if (pos != null)
+                    {
+                        dm.delay(200);
+                        dm.MoveToClick(pos.OffsetPosition(new Position(5, 5)));
+                        isOk = true;
+                    }
+                    else
+                    {
+                        dm.delay(500);
+                        dm.MoveToClick(new Position(1021, 335));
+                    }
+                }
             }
-            //循环检测战斗结束并点击结束跳过动画
-            WhileEnd(dm);
-            //检测继续邀请并点击继续
-            pos = dm.WhileFeatures(() => dm.GetPositionByOcr("御魂继续", "52422D-2C1F0E", new Position(867, 515), new Position(994, 566)), "循环检测并点击开始战斗按钮");
-            if (pos != null)
-            {
-                dm.delay(200);
-                dm.MoveToClick(pos.OffsetPosition(new Position(5, 5)));
-            }
+            goto Start;
         }
+
 
 
         public static void JieShouYuHun(XGDm dm)
