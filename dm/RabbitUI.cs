@@ -194,6 +194,8 @@ namespace dm
             {
                 item.Yys.UnBindWindow();
             }
+            ThreadList=new List<KeyValueViewModel<Thread>>();
+            ThreadGame = new List<GameObjTaskModel>();
         }
 
         private void RabbitUI_FormClosing(object sender, FormClosingEventArgs e)
