@@ -29,7 +29,7 @@ namespace dm
 
         public List<KeyValueViewModel<Thread>> ThreadList = new List<KeyValueViewModel<Thread>>();
 
-        public List<GameObjTaskModel> ThreadGame =new List<GameObjTaskModel>();
+        public List<GameObjTaskModel> ThreadGame = new List<GameObjTaskModel>();
 
         public int RadioTag { get; set; }
 
@@ -37,10 +37,7 @@ namespace dm
 
         private void RabbitUI_Load(object sender, EventArgs e)
         {
-            //1.创建大漠对象
-            
-            //2.以Model创建线程
-            //Console.WriteLine(model);
+
         }
 
 
@@ -50,6 +47,10 @@ namespace dm
 " + logMessage;
         }
 
+
+        #region UI
+
+        #region TabChange
         private void GoProgressLinkLabel_Click(object sender, LinkLabelLinkClickedEventArgs e)
         {
             TabControlMain.SelectTab("LogTab");
@@ -77,7 +78,32 @@ namespace dm
                 MainLabel.Text = @"关于兔兔";
             }
         }
+        #endregion
 
+        #region Config
+        private void RedioBtnChange(object sender, EventArgs e)
+        {
+            var radio = (RadioButton)sender;
+            foreach (var item in FunPanel.Controls)
+            {
+                // ReSharper disable once CanBeReplacedWithTryCastAndCheckForNull
+                if (!(item is RadioButton)) continue;
+                var btn = (RadioButton)item;
+                if (btn == radio && btn.Checked)
+                {
+                    RadioTag = Convert.ToInt32(btn.Tag);
+                    //MessageBox.Show($@"{btn.Tag}");
+                }
+            }
+        }
+        #endregion
+
+
+
+
+        #endregion
+
+        #region CursorIntPtr
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
@@ -105,12 +131,13 @@ namespace dm
         {
             var pictureBox = ((PictureBox)sender);
             pictureBox.Image = Resources.Drag;
+            Cursor = Cursors.Default;
             if (!Dragging) return;
             Dragging = false;
-            Cursor = Cursors.Default;
-            if (HwndCurrent == IntPtr.Zero) return;
         }
+        #endregion
 
+        #region StartThread
         private void Start_Click(object sender, EventArgs e)
         {
             if (HwndCurrent == IntPtr.Zero)
@@ -119,28 +146,33 @@ namespace dm
             }
             var model = GameObjTaskModel.GetYysGameObject(this);
             model.HwndCurrent = HwndCurrent;
-            model.Yys.SetAero(0);//关闭Aero
-            //后台绑定且隐藏dll
+            model.Yys.SetAero(0);
+            SetLog(@"关闭系统Aero效果");
             var x = model.Yys.BindWindowEx(HwndCurrent, "dx2", "windows3", "windows", "", 0);
+            SetLog($"后台绑定:{x}");
+            if (x == 1) return;
             ThreadGame.Add(model);
             var th = new Thread(() =>
-            {
-                switch (RadioTag)
                 {
-                    case 0:
-                        YysTools.Main(model.Yys);
-                        break;
-                    case 1:
-                        YysTools.StartYuHun(model.Yys);
-                        break;
-                    case 2:
+                    switch (RadioTag)
+                    {
+                        case 0:
+                            YysTools.Main(model.Yys);
+                            break;
+                        case 1:
+                            YysTools.StartYuHun(model.Yys);
+                            break;
+                        case 2:
 
-                        break;
-                    case 3:
+                            break;
+                        case 3:
 
-                        break;
-                }
-            }){ IsBackground = true };
+                            break;
+                    }
+                })
+            {
+                IsBackground = true
+            };
             ThreadList.Add(new KeyValueViewModel<Thread>()
             {
                 Key = $"{RadioTag}",
@@ -148,24 +180,10 @@ namespace dm
             });
             th.Start();
         }
+        #endregion
 
 
-        private void RedioBtnChange(object sender, EventArgs e)
-        {
-            var radio = (RadioButton)sender;
-            foreach (var item in FunPanel.Controls)
-            {
-                // ReSharper disable once CanBeReplacedWithTryCastAndCheckForNull
-                if (!(item is RadioButton)) continue;
-                var btn = (RadioButton)item;
-                if (btn == radio && btn.Checked)
-                {
-                    RadioTag = Convert.ToInt32(btn.Tag);
-                    MessageBox.Show($@"{btn.Tag}");
-                }
-            }
-        }
-
+        #region EndThread
         private void buttonQueryCompact_Click(object sender, EventArgs e)
         {
             foreach (var item in ThreadList)
@@ -177,5 +195,19 @@ namespace dm
                 item.Yys.UnBindWindow();
             }
         }
+
+        private void RabbitUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (var item in ThreadList)
+            {
+                item.Value.Abort();
+            }
+            foreach (var item in ThreadGame)
+            {
+                item.Yys.UnBindWindow();
+            }
+        }
+
+        #endregion
     }
 }

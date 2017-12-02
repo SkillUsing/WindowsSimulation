@@ -149,7 +149,7 @@ namespace dm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            YysTools.StartYuHun(_dm);
+            //YysTools.StartYuHun(_dm);
             //YysTools.Main(_dm);
         }
     }

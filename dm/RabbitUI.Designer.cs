@@ -708,12 +708,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 546);
-            this.Controls.Add(this.TabControlMain);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.TabControlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "RabbitUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RabbitUI_FormClosing);
             this.Load += new System.EventHandler(this.RabbitUI_Load);
             this.TabControlMain.ResumeLayout(false);
             this.ConfigTab.ResumeLayout(false);
